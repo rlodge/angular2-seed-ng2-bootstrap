@@ -1,0 +1,29 @@
+.sample-app-content {
+  font-family: Verdana;
+  h1 {
+    color: #999;
+    font-size: 3em;
+  }
+  h2 {
+    color: #990000;
+    font-size: 2em;
+  }
+  p, nav {
+    padding: 30px;
+  }
+  li, p {
+    font-size: 1.2em;
+  }
+  li {
+    font-family: Consolas;
+  }
+  nav a {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  input, button {
+    padding: 5px;
+    font-size: 1em;
+    outline: none;
+  }
+}
