@@ -8,7 +8,7 @@ import {
 import {HomeCmp} from '../home/home';
 import {AboutCmp} from '../about/about';
 import {NameList} from '../../services/name_list';
-import { DROPDOWN_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
+import { DROPDOWN_DIRECTIVES, Collapse } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   selector: 'app',
@@ -16,10 +16,15 @@ import { DROPDOWN_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
-  directives: [ROUTER_DIRECTIVES, DROPDOWN_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, DROPDOWN_DIRECTIVES, Collapse]
 })
 @RouteConfig([
   { path: '/', component: HomeCmp, as: 'Home' },
   { path: '/about', component: AboutCmp, as: 'About' }
 ])
-export class AppCmp {}
+export class AppCmp {
+
+  public appTitle = '<%= APP_TITLE %>';
+  public isCollapsed:boolean = true;
+
+}
