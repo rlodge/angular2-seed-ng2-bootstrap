@@ -53,13 +53,15 @@ export const NPM_DEPENDENCIES = [
   { src: 'angular2/bundles/angular2.min.js', inject: 'libs', dest: LIB_DEST },
   { src: 'angular2/bundles/router.js', inject: 'libs', dest: LIB_DEST }, // use router.min.js with alpha47
   { src: 'angular2/bundles/http.min.js', inject: 'libs', dest: LIB_DEST },
+  { src: 'ng2-bootstrap/ng2-bootstrap.js', inject: 'libs', dest: LIB_DEST },
 
   { src: 'bootstrap/dist/css/bootstrap.min.css', inject: true, dest: CSS_DEST }
 ];
 
 // Declare local files that needs to be injected
 export const APP_ASSETS = [
-  { src: `${APP_DEST}/assets/main.css`, inject: true, dest: CSS_DEST }
+  { src: `${APP_DEST}/assets/main.css`, inject: true, dest: CSS_DEST },
+  { src: `${APP_DEST}/assets/ie10-viewport-bug-workaround.css`, inject: true, dest: CSS_DEST }
 ];
 
 NPM_DEPENDENCIES
