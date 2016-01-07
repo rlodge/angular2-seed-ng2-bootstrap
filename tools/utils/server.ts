@@ -11,6 +11,13 @@ export function serveSPA() {
   codeChangeTool.listen();
   server.use.apply(server, codeChangeTool.middleware);
 
+  //Redirect everything that doesn't end in an extension to index.html
+  var indexPath = resolve(process.cwd(), APP_DEST + '/index.html');
+  server.get(/^(.{1,6}|.*[^\.]{5})$/, function(request, response) {
+    util.log("Redirecting request for " + request.url + " to " + indexPath);
+    response.sendFile(indexPath);
+  });
+
   server.listen(PORT, () => {
     util.log('Server is listening on port: ' + PORT);
     openResource('http://localhost:' + PORT + APP_BASE + APP_DEST);
