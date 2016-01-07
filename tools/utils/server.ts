@@ -20,6 +20,7 @@ export function serveSPA() {
 
   server.listen(PORT, () => {
     util.log('Server is listening on port: ' + PORT);
+    util.log('Opening http://localhost:' + PORT + APP_BASE + APP_DEST);
     openResource('http://localhost:' + PORT + APP_BASE + APP_DEST);
   });
 }
