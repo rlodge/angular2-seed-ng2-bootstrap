@@ -16,7 +16,8 @@ export = function buildJSDev(gulp, plugins) {
     }
 
     function minifyCss() {
-      return gulp.src(join(APP_SRC, '**/*.css'))
+      return gulp.src(join(APP_SRC, '**/*.scss'))
+        .pipe(plugins.sass().on('error', plugins.sass.logError))
         .pipe(plugins.minifyCss())
         .pipe(gulp.dest(TMP_DIR));
     }
