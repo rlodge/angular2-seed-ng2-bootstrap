@@ -10,7 +10,6 @@ export = function buildJSDev(gulp, plugins) {
                 '!' + join(APP_SRC, '**/*_spec.ts')
               ];
 
-    //TODO: Minimize?  Bundle?  Webpack?
     let result = gulp.src(src)
       .pipe(plugins.plumber())
       .pipe(plugins.inlineNg2Template({ base: TMP_DIR }))
