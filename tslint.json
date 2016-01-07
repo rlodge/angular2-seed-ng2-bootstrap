@@ -28,7 +28,6 @@
       "check-else",
       "check-whitespace"
     ],
-    "quotemark": [true, "single"],
     "semicolon": true,
     "triple-equals": true,
     "variable-name": false
