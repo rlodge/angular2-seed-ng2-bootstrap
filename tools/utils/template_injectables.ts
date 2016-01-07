@@ -24,8 +24,7 @@ export function transformPath(plugins, env) {
     } else {
       arguments[0] = join(APP_BASE, filepath);
     }
-	  var s = slash(plugins.inject.transform.apply(plugins.inject.transform, arguments));
-    console.log(filepath + " --> " + s);
+    var s = slash(plugins.inject.transform.apply(plugins.inject.transform, arguments));
     return s;
   };
 }
