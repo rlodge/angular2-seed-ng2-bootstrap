@@ -10,11 +10,9 @@
       </button>
       <a class="navbar-brand" [routerLink]="['/Home']">{{appTitle}}</a>
     </div>
-    <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed" >
+    <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed" (click)="navbarClicked()">
       <ul class="nav navbar-nav">
-        <!-- TODO: Active / Inactive -->
-        <!-- TODO: Autoclose -->
-        <li class="active"><a [routerLink]="['/Home']">Home</a></li>
+        <li><a [routerLink]="['/Home']">Home</a></li>
         <li><a [routerLink]="['/About']">About</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="dropdown" dropdown>

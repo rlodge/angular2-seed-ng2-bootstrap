@@ -27,3 +27,11 @@
     outline: none;
   }
 }
+.navbar-default .navbar-nav > li > a.router-link-active {
+  color: #555;
+  background-color: #e7e7e7;
+  &:hover, &:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+}

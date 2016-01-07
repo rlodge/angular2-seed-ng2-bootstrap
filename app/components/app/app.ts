@@ -27,4 +27,8 @@ export class AppCmp {
   public appTitle = '<%= APP_TITLE %>';
   public isCollapsed:boolean = true;
 
+  public navbarClicked() {
+    this.isCollapsed = true;
+  }
+
 }
