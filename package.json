@@ -18,7 +18,7 @@
     "karma": "karma",
     "karma.start": "karma start",
     "lint": "gulp tslint",
-    "postinstall": "tsd reinstall --clean && tsd link && tsd rebundle && gulp check.versions && gulp postinstall",
+    "postinstall": "tsd reinstall --clean --config node_modules/angular2-gulp-build/tsd.json && tsd install && tsd link && tsd rebundle && gulp check.versions && gulp postinstall",
     "reinstall": "rimraf node_modules && npm cache clean && npm install",
     "start": "gulp serve --env dev",
     "serve.dev": "gulp serve --env dev",
@@ -31,7 +31,7 @@
   "author": "Minko Gechev <mgechev>",
   "license": "MIT",
   "devDependencies": {
-    "angular2-gulp-build": "file:///Users/rlodge/code/misc/angular2-gulp-build/angular2-gulp-build-1.0.0.tgz"
+    "angular2-gulp-build": "file:///Users/rlodge/code/misc/angular2-gulp-build/dist/angular2-gulp-build-1.0.0.tar.gz"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.0",

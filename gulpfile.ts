@@ -1,5 +1,5 @@
 import * as gulp from 'gulp';
-import {StandardGulpBuild} from './node_modules/angular2-gulp-build/dist/index';
+import {StandardGulpBuild} from './node_modules/angular2-gulp-build/index';
 
 // --------------
 // Clean (override).
