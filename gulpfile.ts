@@ -1,26 +1,26 @@
 import * as gulp from 'gulp';
-import {runSequence, task} from './tools/utils';
+import {StandardGulpBuild} from './node_modules/angular2-gulp-build/dist/index';
 
 // --------------
 // Clean (override).
-gulp.task('clean',       task('clean', 'all'));
-gulp.task('clean.dist',  task('clean', 'dist'));
-gulp.task('clean.test',  task('clean', 'test'));
-gulp.task('clean.tmp',   task('clean', 'tmp'));
+gulp.task('clean',       StandardGulpBuild.task('clean', 'all'));
+gulp.task('clean.dist',  StandardGulpBuild.task('clean', 'dist'));
+gulp.task('clean.test',  StandardGulpBuild.task('clean', 'test'));
+gulp.task('clean.tmp',   StandardGulpBuild.task('clean', 'tmp'));
 
-gulp.task('check.versions', task('check.versions'));
+gulp.task('check.versions', StandardGulpBuild.task('check.versions'));
 
 // --------------
 // Postinstall.
 gulp.task('postinstall', done =>
-  runSequence('clean',
+  StandardGulpBuild.runSequence('clean',
               'npm',
               done));
 
 // --------------
 // Build dev.
 gulp.task('build.dev', done =>
-  runSequence('clean.dist',
+  StandardGulpBuild.runSequence('clean.dist',
               'tslint',
               'build.sass.dev',
               'build.assets.dev',
@@ -31,7 +31,7 @@ gulp.task('build.dev', done =>
 // --------------
 // Build prod.
 gulp.task('build.prod', done =>
-  runSequence('clean.dist',
+  StandardGulpBuild.runSequence('clean.dist',
               'clean.tmp',
               'tslint',
               'build.assets.prod',
@@ -45,19 +45,19 @@ gulp.task('build.prod', done =>
 // --------------
 // Watch.
 gulp.task('build.dev.watch', done =>
-  runSequence('build.dev',
+  StandardGulpBuild.runSequence('build.dev',
               'watch.dev',
               done));
 
 gulp.task('build.test.watch', done =>
-  runSequence('build.test',
+  StandardGulpBuild.runSequence('build.test',
               'watch.test',
               done));
 
 // --------------
 // Test.
 gulp.task('test', done =>
-  runSequence('clean.test',
+  StandardGulpBuild.runSequence('clean.test',
               'tslint',
               'build.test',
               'karma.start',
@@ -66,7 +66,7 @@ gulp.task('test', done =>
 // --------------
 // Serve.
 gulp.task('serve', done =>
-  runSequence('build.dev',
+  StandardGulpBuild.runSequence('build.dev',
               'server.start',
               'watch.serve',
               done));
@@ -75,6 +75,6 @@ gulp.task('serve', done =>
 // Docs
 // Disabled until https://github.com/sebastian-lenz/typedoc/issues/162 gets resolved
 // gulp.task('docs', done =>
-//   runSequence('build.docs',
+//   StandardGulpBuild.runSequence('build.docs',
 //               'serve.docs',
 //               done));

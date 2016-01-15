@@ -1,4 +1,4 @@
-/// <reference path="../tools/typings/tsd/systemjs/systemjs.d.ts"/>
+/// <reference path="../typings/tsd/tsd.d.ts"/>
 
 import {provide} from 'angular2/core';
 import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
