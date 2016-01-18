@@ -1,9 +1,0 @@
-{
-  "version": "v4",
-  "repo": "DefinitelyTyped/DefinitelyTyped",
-  "ref": "master",
-  "path": "typings/tsd",
-  "bundle": "typings/tsd/tsd.d.ts",
-  "installed": {
-  }
-}

@@ -1,0 +1,2 @@
+//Horrible, horrible hack to work around the fact that the angular2 node module includes typings that duplicate typings in the project
+/// <reference path="../../../../typings/main/ambient/node/node.d.ts" />

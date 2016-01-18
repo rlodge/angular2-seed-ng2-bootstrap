@@ -38,4 +38,6 @@ docs
 lib
 test
 typings/tsd
+typings/main*
+typings/browser*
 tmp
